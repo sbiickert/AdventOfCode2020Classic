@@ -1,11 +1,7 @@
 /*
- *  Hello World for the CodeWarrior
- *  © 1997-1998 Metrowerks Corp.
- *
- *  Questions and comments to:
- *       <mailto:support@metrowerks.com>
- *       <http://www.metrowerks.com/>
- */
+	Advent of Code 2020, Day 1
+	Report Repair
+*/
 
 #include <iostream>
 #include <set>
