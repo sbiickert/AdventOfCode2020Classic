@@ -1,3 +1,8 @@
+/*
+	Advent of Code 2020, Day 2
+	Password Philosophy
+*/
+
 #include <vector>
 #include <string>
 
