@@ -5,9 +5,10 @@
 
 namespace aoc {
 	std::vector<std::string> ReadInputFile(std::string name, bool removeEmpty);
+	std::vector<std::vector<std::string> > ReadGroupedInputFile(std::string name);
 	
 	int stoi(std::string input);
-	long stol(std::string input);
+	long long stol(std::string input);
 	
 	bool is_whitespace(const std::string& s);
 

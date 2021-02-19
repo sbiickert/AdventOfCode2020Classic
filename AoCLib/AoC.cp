@@ -19,6 +19,29 @@ namespace aoc {
 		return results;
 	}
 	
+	std::vector<std::vector<std::string> > ReadGroupedInputFile(std::string name) {
+		// 2-dimensional vector of strings, broken on empty lines
+		std::vector<std::vector<std::string> > input;
+		
+		std::vector<std::string> lines = ReadInputFile(name, false);
+		
+		std::vector<std::string> group;
+		std::vector<std::string>::iterator it;
+		for (it = lines.begin(); it != lines.end(); it++) {
+			if (is_whitespace(*it)) {
+				input.push_back(group);
+				group = std::vector<std::string>();
+			}
+			else {
+				group.push_back(*it);
+			}
+		}
+		if (group.size() > 0) {
+			input.push_back(group);
+		}
+		return input;
+	}
+	
 	int stoi(std::string input) {
 		std::istringstream ss(input);
 		int theValue;
@@ -26,9 +49,9 @@ namespace aoc {
 		return theValue;
 	}
 	
-	long stol(std::string input) {
+	long long stol(std::string input) {
 		std::istringstream ss(input);
-		long theValue;
+		long long theValue;
 		ss >> theValue;
 		return theValue;
 	}
