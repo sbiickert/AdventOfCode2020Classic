@@ -6,7 +6,6 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <algorithm>
 
 #include "AoC.h"
 #include "Day07.h"
