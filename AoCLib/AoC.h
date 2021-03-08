@@ -10,6 +10,10 @@ namespace aoc {
 	int stoi(std::string input);
 	long long stol(std::string input);
 	
+	std::string replace_all(std::string s, std::string old_str, std::string new_str);
+	std::vector<std::string> split(std::string);
+	std::vector<std::string> split(std::string, std::string delim);
+	
 	bool is_whitespace(const std::string& s);
 
 	

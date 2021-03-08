@@ -1,4 +1,5 @@
 #include "AoC.h"
+#include <sstream>
 
 namespace aoc {
 	std::vector<std::string> ReadInputFile(std::string name, bool removeEmpty) {
@@ -56,6 +57,47 @@ namespace aoc {
 		return theValue;
 	}
 
+	std::string replace_all(std::string s, std::string old_str, std::string new_str) {
+		std::size_t pos = s.find(old_str);
+		while (pos != std::string::npos) {
+			s.replace(pos, new_str.size(), new_str);
+			pos = s.find(old_str, pos+1);
+		}
+		return s;
+	}
+	
+	std::vector<std::string> split(std::string s) {
+		return split(s, " ");
+	}
+	
+	const char* UNLIKELY_DELIMITERS = "_~%$#";
+	
+	std::vector<std::string> split(std::string s, std::string delim) {
+		std::string space_substitute = " ";
+		if (delim != " ") {
+			// We want to get s to be ' ' delimited
+			// Replace all spaces in s with an UNLIKELY_DELIMITER
+			space_substitute = "_";
+			s = replace_all(s, " ", space_substitute);
+			
+			// Now turn all of the delimiter chars into spaces
+			s = replace_all(s, delim, " ");
+		}
+		
+		std::istringstream iss(s);
+		std::vector<std::string> parsed((std::istream_iterator<std::string>(iss)),
+										 std::istream_iterator<std::string>());
+		std::vector<std::string>::iterator it;
+		
+		if (delim != " ") {
+			for (it = parsed.begin(); it != parsed.end(); it++) {
+				*it = replace_all(*it, space_substitute, " ");
+			}
+		}
+		
+		return parsed;
+	}
+	
 	bool is_whitespace(const std::string& s) {
 		for (std::string::const_iterator it = s.begin(); it != s.end(); ++it) {
 			if (!std::isspace(*it)) {
