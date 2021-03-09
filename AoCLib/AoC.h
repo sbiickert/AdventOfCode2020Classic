@@ -37,5 +37,8 @@ namespace aoc {
 		output.append("]");
 		return output;
     }
-
+	
+	template <typename T> void remove_value(std::vector<T> &v, T value) {
+		v.erase( remove(v.begin(), v.end(), value), v.end());
+	} 
 }
