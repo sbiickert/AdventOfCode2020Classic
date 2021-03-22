@@ -26,3 +26,9 @@ So I discovered the MW Profiler, part of the CodeWarrior suite. When I figured o
 ## Updated: Day 14 Complete
 
 Note to self: Mac OS 9 has a different memory model than a modern OS. Each app (including the simple apps I'm writing for the AoC) has a memory allocation. If you run out of memory, bad things happen. And the ridiculous default memory allocation for an app from a CodeWarrior project is 512 kB. Yes, *kilobytes*. So when doing today's challenge when allocating a fair number of 64-bit numbers to a map, I ran out. But it took me a couple of hours to figure it out. I was obsessing over the particular inputs and wondering why *this one* was failing. Turns out the crash happened where the memory ran out, nothing more. So, I allocated a whopping 5 MB of memory and all was well.
+
+## Updated: Day 17 Complete
+
+This might be the end of this effort: not that it isn't fun, but I'm looking to switch it up and do something else. I think I've gotten a ton out of this, but the next challenge (Day 18) is so focused on regex that I can't imagine trying to solve without it.
+
+Day 17 (Conway Pockets) was a challenge because for the first time I really tried moving beyond my Swift solution and tried something new. I wanted to (and eventually succeeded) make an N-dimensional solution. My Swift solution was originally hard coded for 3 dimensions, and then I hacked a fourth dimension on for part 2. I tried a couple different ways to approach this with N dimensions in C++, so it took many days to solve. I am quite happy with the result. The code is clean and actually runs well. It's slower than my Swift solution, but if you consider that my Powerbook is probably 20 times slower than my MacBook Pro, it's something to be proud of.
