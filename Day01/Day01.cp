@@ -7,6 +7,7 @@
 #include <set>
 
 
+#include "Day01.h"
 #include "AoC.h"
 
 using namespace std;  //introduces namespace std
@@ -17,8 +18,10 @@ vector<int> ReadExpenseAmounts();
 int SolveForTwo(vector<int> amounts);
 int SolveForThree(vector<int> amounts);
 
-int main()
+int SolveDay01()
 {
+	cout << "Day 01: Report Repair" << endl;
+
 	vector<int> amounts = ReadExpenseAmounts();
 	
 	int product2 = SolveForTwo(amounts);
@@ -27,7 +30,7 @@ int main()
 	int product3 = SolveForThree(amounts);
 	cout << "The product is " << product3 << endl;
 	
-	
+	cout << endl;
 	return 0;
 }
 
@@ -73,7 +76,7 @@ int SolveForThree(vector<int> amounts) {
 vector<int> ReadExpenseAmounts() {
 	
 	vector<string> input;
-	input = aoc::ReadInputFile("Day1_Input.txt", true);
+	input = aoc::ReadInputFile(aoc::INPUT_PATH + "01.challenge.txt", true);
 	
 	vector<int> amounts;
 	vector<string>::iterator it;

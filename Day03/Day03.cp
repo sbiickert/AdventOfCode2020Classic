@@ -12,9 +12,11 @@
 
 using namespace std;  //introduces namespace std
 
-int main()
+int SolveDay03()
 {
-	vector<string> input = aoc::ReadInputFile("Day3_Input.txt", true);
+	cout << "Day 03: Toboggan Trajectory" << endl;
+
+	vector<string> input = aoc::ReadInputFile(aoc::INPUT_PATH + "03.test.txt", true);
 	auto_ptr<TobogganHill> theHill (new TobogganHill(input));
 	
 	cout << "size of int:  " << sizeof(int) << endl;
@@ -59,6 +61,7 @@ int main()
 	
 	cout << "The product for part 2: " << product << endl;
 	
+	cout << endl;
 	return 0;
 }
 

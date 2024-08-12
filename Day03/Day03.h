@@ -6,6 +6,8 @@
 #include <vector>
 #include <string>
 
+int SolveDay03();
+
 class TobogganHill {
 private:
 	std::vector<std::string> mHill;

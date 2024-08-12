@@ -25,8 +25,10 @@ bool IsPasswordValid2(PasswordInfo p) {
 	return minPosIsLetter != maxPosIsLetter;
 }
 
-int main()
-{	
+int SolveDay02()
+{
+	cout << "Day 02: Password Philosophy" << endl;
+
 	vector<PasswordInfo> pi = ReadPasswordInfo();
 	
 	int valid_count;
@@ -37,6 +39,7 @@ int main()
 	valid_count = count_if(pi.begin(), pi.end(), IsPasswordValid2);
 	cout << valid_count << " passwords are valid for part 2." << endl;
 	
+	cout << endl;
 	return 0;
 }
 
@@ -45,7 +48,7 @@ PasswordInfo ParsePasswordInfo(string line);
 vector<PasswordInfo> ReadPasswordInfo() {
 	
 	vector<string> input;
-	input = aoc::ReadInputFile("Day2_Input.txt", true);
+	input = aoc::ReadInputFile(aoc::INPUT_PATH + "02.challenge.txt", true);
 	
 	vector<PasswordInfo> results;
 	

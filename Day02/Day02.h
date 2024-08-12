@@ -13,6 +13,7 @@ struct PasswordInfo {
 	std::string password;
 };
 
+int SolveDay02();
 bool IsPasswordValid1(PasswordInfo p);
 bool IsPasswordValid2(PasswordInfo p);
 
